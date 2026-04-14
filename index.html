@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERSEGUROS BR | Agencia Exclusiva Reale Guadalupe</title>
+    <meta name="description" content="SuperSeguros BR, tu Agencia Exclusiva Reale en Guadalupe, Murcia. Seguros de coche, hogar, vida y empresas con asesoramiento personalizado, sin letra pequeña y atención real. Solicita presupuesto sin compromiso.">
+    <meta name="keywords" content="seguros Guadalupe, agencia Reale Murcia, seguro coche Guadalupe, seguro hogar Murcia, SuperSeguros BR">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SuperSeguros BR | Agencia Exclusiva Reale en Guadalupe">
+    <meta property="og:description" content="Tu agencia de seguros de confianza en Guadalupe, Murcia. Asesoramiento real, sin esperas ni robots. Coche, Hogar, Vida, Empresas y más.">
+    <meta property="og:image" content="https://res.cloudinary.com/dg3peytgm/image/upload/v1774627271/ChatGPT_Image_27_mar_2026_17_01_05_gh7egi.png">
+    <meta property="og:locale" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#002654">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        reale: {
+                            blue: '#003876',    /* Azul corporativo Reale */
+                            dark: '#002654',    /* Azul oscuro */
+                            yellow: '#FFC72C',  /* Amarillo de contraste */
+                            light: '#F4F6F8',   /* Fondo claro */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        heading: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ─── ANIMACIONES GENERALES ──────────────────────────────── */
+        .fade-in {
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Reveal al scroll — base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Variante reveal desde la izquierda */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-36px);
+            transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Variante reveal desde la derecha */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(36px);
+            transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Animación de entrada del hero (se dispara en carga, no en scroll) */
+        .hero-stagger-1 { animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 0.1s both; }
+        .hero-stagger-2 { animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 0.25s both; }
+        .hero-stagger-3 { animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 0.45s both; }
+        .hero-stagger-4 { animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 0.65s both; }
+        .hero-stagger-5 { animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 0.85s both; }
+
+        @keyframes heroIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ticker / marquee de confianza */
+        @keyframes ticker {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: ticker 35s linear infinite;
+        }
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Acordeón FAQ — transición suave */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                        padding    0.3s ease;
+        }
+        .faq-answer.faq-open {
+            max-height: 320px;
+        }
+
+        /* Pulse en botón WhatsApp */
+        @keyframes wapulse {
+            0%, 100% { box-shadow: 0 4px 16px rgba(37,211,102,.35); }
+            50%       { box-shadow: 0 4px 28px rgba(37,211,102,.65), 0 0 0 8px rgba(37,211,102,.12); }
+        }
+        .wa-btn { animation: wapulse 2.5s ease-in-out infinite; }
+
+        /* Contador animado — estado */
+        .stat-counter { font-variant-numeric: tabular-nums; }
+
+        /* Nav — indicador de sección activa */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0; right: 0;
+            height: 2px;
+            background: #003876;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+        .nav-link.nav-active::after { transform: scaleX(1); }
+        .nav-link.nav-active { color: #003876; }
+
+        /* scroll-margin-top para todas las secciones ancladas
+           (corrige que el nav sticky tape los títulos) */
+        [id$="-section"] { scroll-margin-top: 88px; }
+
+        /* Parallax hero — patrón de fondo */
+        .hero-pattern {
+            will-change: transform;
+            transition: none;
+        }
+
+        /* Tarjeta de producto adicional — hover sutil */
+        .product-card {
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+        }
+        .product-card:hover {
+            border-color: #FFC72C;
+            box-shadow: 0 8px 24px -8px rgba(0,56,118,0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Stat card de la agencia */
+        .agency-stat-card {
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1),
+                        box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .agency-stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -12px rgba(0,38,84,0.2);
+        }
+
+        /* Utilidad para anclar el héroe al fondo */
+        .hero-img-container {
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .hero-img-container img {
+            height: 85%;
+            object-fit: contain;
+            object-position: bottom center;
+        }
+
+        /* Modal */
+        #modal-quote.open {
+            display: flex;
+        }
+        
+        /* Selector de tipo de seguro — radio buttons visuales */
+        .seguro-option input:checked + .seguro-label {
+            border-color: #003876;
+            background-color: #EBF0F8;
+            color: #003876;
+        }
+
+        /* ─── HERO STAGGER 6 (botones, ligeramente posterior al párrafo) ── */
+        .hero-stagger-6 { animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 1.05s both; }
+
+        /* ─── TICKER — fade de bordes (gradiente sobre ambos extremos) ─── */
+        .ticker-wrapper {
+            position: relative;
+        }
+        .ticker-wrapper::before,
+        .ticker-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 100px;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .ticker-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, #F9FAFB 20%, transparent);
+        }
+        .ticker-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, #F9FAFB 20%, transparent);
+        }
+
+        /* ─── MOBILE MENU — animación de entrada ──────────────────────── */
+        #mobile-menu {
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity    0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.menu-open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        /* ─── FAQ — estado abierto: fondo sutil en la respuesta ───────── */
+        .faq-answer.faq-open {
+            background-color: #FAFBFC;
+        }
+
+        /* ─── FAQ items — stagger reveal ─────────────────────────────── */
+        .faq-item { transition-property: opacity, transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 0.65s; }
+
+        /* ─── CONTACTO — hover en tarjetas de datos ──────────────────── */
+        .contact-card {
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+        }
+        .contact-card:hover {
+            border-color: #003876;
+            box-shadow: 0 4px 16px -4px rgba(0,56,118,0.12);
+            transform: translateY(-2px);
+        }
+
+        /* ─── "ASÍ TRABAJAMOS" — línea conectora mejorada ────────────── */
+        .process-connector {
+            border-top: 2px dashed #D1D5DB;
+        }
+
+        /* ─── NOSOTROS — badge de acreditación ───────────────────────── */
+        .credential-badge {
+            transition: box-shadow 0.25s ease;
+        }
+        .credential-badge:hover {
+            box-shadow: 0 4px 12px rgba(0,56,118,0.1);
+        }
+
+        /* ─── FOOTER — links de navegación ───────────────────────────── */
+        .footer-link {
+            color: #93C5FD;
+            font-size: 0.875rem;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .footer-link:hover {
+            color: #ffffff;
+            padding-left: 4px;
+        }
+        .footer-link::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #FFC72C;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        /* ─── MODAL — entrada del panel más suave ─────────────────────── */
+        #modal-quote .modal-panel {
+            animation: modalPanelIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        @keyframes modalPanelIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to   { opacity: 1; transform: scale(1)    translateY(0); }
+        }
+
+        /* ─── CTA final — features row ───────────────────────────────── */
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #002654;
+        }
+
+        /* ─── HERO badge flotante — estadística de confianza ─────────── */
+        .hero-trust-badge {
+            animation: heroIn 0.7s cubic-bezier(0.4,0,0.2,1) 1.2s both;
+        }
+
+        /* ─── Product card icon — hover rotation sutil ───────────────── */
+        .product-card .product-icon {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .product-card:hover .product-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        /* ─── Footer top decorative line ─────────────────────────────── */
+        .footer-top-accent {
+            height: 3px;
+            background: linear-gradient(to right, transparent, #FFC72C, #003876, #FFC72C, transparent);
+        }
+
+        /* ─── Scroll to top button ──────────────────────────────────── */
+        #scroll-top-btn {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+        }
+        #scroll-top-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #scroll-top-btn:hover {
+            background-color: #003876;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <nav id="navbar" class="bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center cursor-pointer gap-3 md:gap-4" onclick="navigateTo('home')">
+                    <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774627271/ChatGPT_Image_27_mar_2026_17_01_05_gh7egi.png" alt="SuperSeguros BR" class="h-12 md:h-14 object-contain">
+                    <div class="h-8 w-px bg-gray-300 hidden sm:block"></div>
+                    <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774626024/Reale_t6054x.png" alt="Agencia Reale" class="h-6 md:h-8 object-contain">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="navigateTo('home')" class="text-gray-600 hover:text-reale-blue font-medium transition-colors">Inicio</button>
+                    <button id="nav-btn-seguros" onclick="scrollToSeguros()" class="nav-link text-gray-600 hover:text-reale-blue font-medium transition-colors">Seguros</button>
+                    <button id="nav-btn-proceso" onclick="scrollToSection('proceso-section')" class="nav-link text-gray-600 hover:text-reale-blue font-medium transition-colors">Proceso</button>
+                    <button id="nav-btn-nosotros" onclick="scrollToSection('nosotros-section')" class="nav-link text-gray-600 hover:text-reale-blue font-medium transition-colors">Nosotros</button>
+                    <button id="nav-btn-contacto" onclick="scrollToSection('contacto-section')" class="nav-link text-gray-600 hover:text-reale-blue font-medium transition-colors">Contacto</button>
+                    <div class="flex items-center gap-2 text-reale-blue font-semibold">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span>968 85 96 11</span>
+                    </div>
+                    <button onclick="navigateTo('quote')" class="bg-reale-yellow text-reale-dark px-6 py-2.5 rounded-full font-bold hover:bg-yellow-400 transition-all shadow-md flex items-center gap-2">
+                        Pedir Presupuesto
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-reale-blue focus:outline-none">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 pb-4 px-4 shadow-inner">
+            <button onclick="navigateTo('home')" class="block w-full text-left py-3 text-gray-700 font-medium border-b border-gray-50">Inicio</button>
+            <button onclick="scrollToSeguros()" class="block w-full text-left py-3 text-gray-700 font-medium border-b border-gray-50">Seguros</button>
+            <button onclick="scrollToSection('proceso-section')" class="block w-full text-left py-3 text-gray-700 font-medium border-b border-gray-50">Proceso</button>
+            <button onclick="scrollToSection('nosotros-section')" class="block w-full text-left py-3 text-gray-700 font-medium border-b border-gray-50">Nosotros</button>
+            <button onclick="scrollToSection('contacto-section')" class="block w-full text-left py-3 text-gray-700 font-medium border-b border-gray-50">Contacto</button>
+            <button onclick="navigateTo('quote')" class="block w-full text-center mt-4 bg-reale-yellow text-reale-dark px-4 py-3 rounded-md font-bold shadow-md">
+                Pedir Presupuesto
+            </button>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        
+        <div id="view-home" class="fade-in block">
+            
+            <section id="hero-section" class="bg-gradient-to-b from-reale-dark to-[#002046] relative overflow-hidden z-10">
+                <div class="hero-pattern absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 32px 32px;"></div>
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-reale-blue opacity-30 blur-3xl pointer-events-none"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-12 gap-8 min-h-[600px] lg:min-h-[calc(100vh-80px)]">
+                        
+                        <div class="lg:col-span-7 flex flex-col justify-center pt-24 pb-36 lg:pt-28 lg:pb-36 text-center lg:text-left">
+                            <span class="hero-stagger-1 inline-block self-center lg:self-start py-1.5 px-4 rounded-full bg-white bg-opacity-10 text-reale-yellow border border-reale-yellow border-opacity-30 font-semibold text-sm mb-6 tracking-widest uppercase shadow-sm">
+                                Tu tranquilidad, nuestra prioridad
+                            </span>
+                            
+                            <h1 class="font-heading text-white leading-[1.05] mb-6 uppercase">
+                                <span class="hero-stagger-2 block text-3xl md:text-4xl lg:text-5xl opacity-90">Protege lo que</span>
+                                <span class="hero-stagger-3 block text-3xl md:text-4xl lg:text-5xl opacity-90">más importa</span>
+                                <span class="hero-stagger-4 block text-5xl md:text-7xl lg:text-8xl text-reale-yellow">SuperSeguros BR</span>
+                            </h1>
+
+                            <p class="hero-stagger-5 text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                                Tu Agencia Exclusiva Reale en Guadalupe, Murcia.<br>Asesoramiento personalizado y transparente para ti, tu familia o tu negocio.
+                            </p>
+                            <div class="hero-stagger-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                                <button onclick="navigateTo('quote')" class="bg-reale-yellow text-reale-dark px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
+                                    Calcula tu seguro ahora <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </button>
+                                <button onclick="scrollToSection('contacto-section')" class="bg-white bg-opacity-10 text-white border border-white border-opacity-30 px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-reale-dark transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                                    Contactar un agente
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 hidden lg:flex hero-img-container relative pb-28">
+                            <div class="hero-trust-badge absolute top-8 right-4 z-20 bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-2xl px-4 py-3 text-right">
+                                <p class="font-heading text-2xl text-reale-yellow leading-none">+1.700</p>
+                                <p class="text-blue-200 text-xs font-medium leading-tight mt-0.5">clientes<br>protegidos</p>
+                            </div>
+                            <div class="hero-trust-badge absolute bottom-36 right-4 z-20 bg-reale-yellow bg-opacity-15 backdrop-blur-sm border border-reale-yellow border-opacity-30 rounded-2xl px-4 py-3 text-right">
+                                <p class="font-heading text-xl text-white leading-none flex items-center gap-1 justify-end">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-reale-yellow"></i>
+                                    Reale
+                                </p>
+                                <p class="text-blue-200 text-xs font-medium leading-tight mt-0.5">Agencia<br>exclusiva</p>
+                            </div>
+                            <div class="absolute bottom-28 left-1/2 transform -translate-x-1/2 w-3/4 h-8 bg-black opacity-30 blur-xl rounded-full"></div>
+                            <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774626050/BR_1_md6blh.png" alt="Superhéroe SuperSeguros BR" class="relative z-10 w-full drop-shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="seguros-section" class="bg-gray-50 relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.3)] z-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    
+                    <div class="ticker-wrapper overflow-hidden mb-16 -mx-4 sm:-mx-6 lg:-mx-8">
+                        <div class="ticker-track select-none">
+                            <div class="flex items-center gap-0">
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-yellow fill-current flex-shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    +1.700 clientes protegidos en Guadalupe
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                    Agencia Exclusiva Reale certificada DGS
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    Respuesta en menos de 24 horas
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+                                    Proximidad y Cercanía
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+                                    +190 años de respaldo Reale Mutua
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Tu agencia en Guadalupe, Murcia
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                            </div>
+                            <div class="flex items-center gap-0" aria-hidden="true">
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-yellow fill-current flex-shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    +1.700 clientes protegidos en Guadalupe
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                    Agencia Exclusiva Reale certificada DGS
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    Respuesta en menos de 24 horas
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+                                    Proximidad y Cercanía
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-yellow flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+                                    +190 años de respaldo Reale Mutua
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                                <span class="flex items-center gap-2.5 px-8 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-reale-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Tu agencia en Guadalupe, Murcia
+                                </span>
+                                <span class="text-gray-400 font-normal text-lg px-1">·</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-16 reveal">
+                        <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-4 uppercase">Soluciones a tu medida</h2>
+                        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Encuentra el seguro perfecto para tu estilo de vida, tu familia o tu negocio con las mejores condiciones.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 group cursor-pointer reveal shadow-sm hover:-translate-y-1 hover:border-reale-yellow hover:shadow-[0_20px_40px_-15px_rgba(0,56,118,0.15)] flex flex-col" style="transition-delay: 0ms;" onclick="navigateTo('quote', 'coche')">
+                            <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-reale-blue transition-colors">
+                                <i data-lucide="car" class="w-8 h-8 text-reale-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Seguro de Coche</h3>
+                            <p class="text-gray-600 mb-6 text-sm flex-grow">Asistencia en viaje desde el km 0, libre elección de taller y vehículo de sustitución.</p>
+                            <span class="text-reale-blue font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Calcular precio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                            <span class="mt-4 inline-flex items-center gap-1 text-xs font-medium text-reale-blue bg-blue-50 px-3 py-1.5 rounded-full w-fit">
+                                <i data-lucide="check" class="w-3 h-3"></i> Km 0 · Taller libre · Sustitución
+                            </span>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 group cursor-pointer reveal shadow-sm hover:-translate-y-1 hover:border-reale-yellow hover:shadow-[0_20px_40px_-15px_rgba(0,56,118,0.15)] flex flex-col" style="transition-delay: 100ms;" onclick="navigateTo('quote', 'hogar')">
+                            <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-reale-blue transition-colors">
+                                <i data-lucide="home" class="w-8 h-8 text-reale-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Seguro de Hogar</h3>
+                            <p class="text-gray-600 mb-6 text-sm flex-grow">Protección total contra robos, daños por agua, incendios y responsabilidad civil.</p>
+                            <span class="text-reale-blue font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Calcular precio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                            <span class="mt-4 inline-flex items-center gap-1 text-xs font-medium text-reale-blue bg-blue-50 px-3 py-1.5 rounded-full w-fit">
+                                <i data-lucide="check" class="w-3 h-3"></i> Daños por agua · Robo · RC
+                            </span>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 group cursor-pointer reveal shadow-sm hover:-translate-y-1 hover:border-reale-yellow hover:shadow-[0_20px_40px_-15px_rgba(0,56,118,0.15)] flex flex-col" style="transition-delay: 200ms;" onclick="navigateTo('quote', 'vida')">
+                            <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-reale-blue transition-colors">
+                                <i data-lucide="heart-pulse" class="w-8 h-8 text-reale-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Seguro de Vida</h3>
+                            <p class="text-gray-600 mb-6 text-sm flex-grow">Asegura el futuro de los tuyos ante cualquier imprevisto con capital garantizado.</p>
+                            <span class="text-reale-blue font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Calcular precio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                            <span class="mt-4 inline-flex items-center gap-1 text-xs font-medium text-reale-blue bg-blue-50 px-3 py-1.5 rounded-full w-fit">
+                                <i data-lucide="check" class="w-3 h-3"></i> Capital garantizado · Familiar
+                            </span>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 group cursor-pointer reveal shadow-sm hover:-translate-y-1 hover:border-reale-yellow hover:shadow-[0_20px_40px_-15px_rgba(0,56,118,0.15)] flex flex-col" style="transition-delay: 300ms;" onclick="navigateTo('quote', 'empresas')">
+                            <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-reale-blue transition-colors">
+                                <i data-lucide="briefcase" class="w-8 h-8 text-reale-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Para Empresas</h3>
+                            <p class="text-gray-600 mb-6 text-sm flex-grow">Pólizas multirriesgo, responsabilidad civil y ciberseguridad para tu negocio.</p>
+                            <span class="text-reale-blue font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Calcular precio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                            <span class="mt-4 inline-flex items-center gap-1 text-xs font-medium text-reale-blue bg-blue-50 px-3 py-1.5 rounded-full w-fit">
+                                <i data-lucide="check" class="w-3 h-3"></i> Multirriesgo · RC · Cyber
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 reveal">
+                        <div class="relative bg-gradient-to-r from-[#003876] via-[#004a9a] to-[#003876] rounded-3xl px-6 py-8 sm:px-10 overflow-hidden">
+                            <div class="absolute right-0 top-0 bottom-0 w-1/3 opacity-[0.06]" style="background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px); background-size: 18px 18px;"></div>
+                            <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-reale-yellow opacity-10 blur-2xl pointer-events-none"></div>
+                            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+                                <div class="flex-shrink-0 flex flex-col items-center gap-2">
+                                    <div class="w-16 h-16 bg-reale-yellow rounded-2xl flex items-center justify-center shadow-lg">
+                                        <i data-lucide="gift" class="w-8 h-8 text-reale-dark"></i>
+                                    </div>
+                                    <span class="bg-green-400 text-green-900 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Activa</span>
+                                </div>
+                                <div class="flex-1 text-center sm:text-left">
+                                    <p class="text-reale-yellow text-xs font-bold uppercase tracking-widest mb-1">Campaña Reale · Válida hasta feb. 2027</p>
+                                    <h3 class="font-heading text-2xl sm:text-3xl text-white uppercase leading-tight mb-2">Sé Más Reale y recibe un regalo</h3>
+                                    <p class="text-blue-200 text-sm leading-relaxed max-w-xl">Contrata un seguro de Coche, Hogar, Vida o Salud con nosotros y consigue una tarjeta regalo de hasta <strong class="text-white">25 €</strong> en Repsol, Visa o Amazon. Además, entras en sorteos trimestrales y en el gran sorteo anual de hasta <strong class="text-white">500 €</strong>.</p>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button onclick="navigateTo('quote')" class="bg-reale-yellow text-reale-dark px-7 py-3.5 rounded-full font-bold text-sm hover:bg-yellow-400 transition-all shadow-lg whitespace-nowrap flex items-center gap-2">
+                                        Me interesa <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </button>
+                                    <p class="text-blue-400 text-[11px] text-center mt-2">*Condiciones en bases de la promoción Reale</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 bg-reale-dark rounded-3xl px-8 py-10 reveal">
+                        <p class="text-center text-xs text-blue-400 uppercase tracking-widest font-semibold mb-8">El respaldo de una de las aseguradoras más sólidas de Europa</p>
+                        <div class="flex flex-col md:flex-row items-center justify-around gap-10 md:gap-6">
+                            
+                            <div class="flex items-center gap-4 text-center md:text-left">
+                                <div class="w-12 h-12 bg-reale-yellow bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="clock" class="w-6 h-6 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="font-heading text-4xl text-reale-yellow uppercase leading-none">+190 años</p>
+                                    <p class="text-blue-200 text-sm mt-1 max-w-[180px]">de historia protegiendo familias y empresas</p>
+                                </div>
+                            </div>
+
+                            <div class="hidden md:block w-px h-14 bg-white opacity-10"></div>
+
+                            <div class="flex items-center gap-4 text-center md:text-left">
+                                <div class="w-12 h-12 bg-reale-yellow bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="landmark" class="w-6 h-6 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="font-heading text-4xl text-reale-yellow uppercase leading-none">Mutualista</p>
+                                    <p class="text-blue-200 text-sm mt-1 max-w-[200px]">sin accionistas — tu prima trabaja para ti, no para terceros</p>
+                                </div>
+                            </div>
+
+                            <div class="hidden md:block w-px h-14 bg-white opacity-10"></div>
+
+                            <div class="flex items-center gap-4 text-center md:text-left">
+                                <div class="w-12 h-12 bg-reale-yellow bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="car" class="w-6 h-6 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="font-heading text-4xl text-reale-yellow uppercase leading-none">1,7 M</p>
+                                    <p class="text-blue-200 text-sm mt-1 max-w-[180px]">de vehículos asegurados en España</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 reveal">
+                        <div class="text-center mb-10">
+                            <h3 class="font-heading text-2xl md:text-3xl text-reale-dark uppercase mb-2">También te protegemos en</h3>
+                            <p class="text-gray-500 text-sm">Somos tu agencia para cualquier ramo. Consulta sin compromiso.</p>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                            <div class="product-card bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center cursor-pointer shadow-sm" onclick="navigateTo('quote','moto')">
+                                <div class="product-icon w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                                    <i data-lucide="bike" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <p class="font-heading text-base text-reale-dark uppercase leading-tight">Moto</p>
+                            </div>
+                            <div class="product-card bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center cursor-pointer shadow-sm" onclick="navigateTo('quote','salud')">
+                                <div class="product-icon w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                                    <i data-lucide="stethoscope" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <p class="font-heading text-base text-reale-dark uppercase leading-tight">Salud</p>
+                            </div>
+                            <div class="product-card bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center cursor-pointer shadow-sm" onclick="navigateTo('quote','accidentes')">
+                                <div class="product-icon w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                                    <i data-lucide="activity" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <p class="font-heading text-base text-reale-dark uppercase leading-tight">Accidentes</p>
+                            </div>
+                            <div class="product-card bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center cursor-pointer shadow-sm" onclick="navigateTo('quote','comercio')">
+                                <div class="product-icon w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                                    <i data-lucide="store" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <p class="font-heading text-base text-reale-dark uppercase leading-tight">Comercio</p>
+                            </div>
+                            <div class="product-card bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center cursor-pointer shadow-sm" onclick="navigateTo('quote','viaje')">
+                                <div class="product-icon w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                                    <i data-lucide="plane" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <p class="font-heading text-base text-reale-dark uppercase leading-tight">Viaje</p>
+                            </div>
+                            <div class="product-card bg-white border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center cursor-pointer shadow-sm" onclick="navigateTo('quote','decesos')">
+                                <div class="product-icon w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                                    <i data-lucide="flower-2" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <p class="font-heading text-base text-reale-dark uppercase leading-tight">Decesos</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-gray-400 mt-6">¿No ves lo que buscas? <button onclick="navigateTo('quote')" class="text-reale-blue font-semibold hover:underline">Consúltanos directamente</button></p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="valores-section" class="bg-gradient-to-br from-[#003876] to-[#001e40] relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 text-white shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.15)] z-30">
+                <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774627271/ChatGPT_Image_27_mar_2026_17_01_05_gh7egi.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] opacity-[0.06] pointer-events-none grayscale">
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-16 reveal">
+                        <h2 class="font-heading text-4xl md:text-5xl mb-4 uppercase text-white">Nuestra Propuesta de Valor</h2>
+                        <p class="text-blue-200 text-lg max-w-2xl mx-auto">Los cuatro pilares sobre los que construimos la protección de nuestros clientes.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="flex flex-col items-center text-center bg-white/5 p-8 rounded-3xl border border-white/10 reveal" style="transition-delay: 0ms;">
+                            <div class="w-14 h-14 bg-reale-yellow rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="users" class="w-7 h-7 text-reale-dark"></i>
+                            </div>
+                            <h4 class="font-heading text-2xl mb-3 uppercase">Asesoramiento personalizado</h4>
+                            <p class="text-blue-100 text-sm leading-relaxed">Conocemos las necesidades de nuestros clientes para adaptar nuestros seguros a sus situaciones particulares.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center bg-white/5 p-8 rounded-3xl border border-white/10 reveal" style="transition-delay: 100ms;">
+                            <div class="w-14 h-14 bg-reale-yellow rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="heart-handshake" class="w-7 h-7 text-reale-dark"></i>
+                            </div>
+                            <h4 class="font-heading text-2xl mb-3 uppercase">Cercanía y compromiso</h4>
+                            <p class="text-blue-100 text-sm leading-relaxed">A tu lado en todo momento, desde la contratación hasta el momento del siniestro, ofreciendo el mejor servicio.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center bg-white/5 p-8 rounded-3xl border border-white/10 reveal" style="transition-delay: 200ms;">
+                            <div class="w-14 h-14 bg-reale-yellow rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="search" class="w-7 h-7 text-reale-dark"></i>
+                            </div>
+                            <h4 class="font-heading text-2xl mb-3 uppercase">Sencillez y transparencia</h4>
+                            <p class="text-blue-100 text-sm leading-relaxed">Hacemos que nuestros productos sean fáciles de entender, sin ambigüedades ni la temida letra pequeña.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center bg-white/5 p-8 rounded-3xl border border-white/10 reveal" style="transition-delay: 300ms;">
+                            <div class="w-14 h-14 bg-reale-yellow rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="briefcase" class="w-7 h-7 text-reale-dark"></i>
+                            </div>
+                            <h4 class="font-heading text-2xl mb-3 uppercase">Experiencia y profesionalidad</h4>
+                            <p class="text-blue-100 text-sm leading-relaxed">Somos especialistas en el sector, desempeñando nuestro trabajo con total seriedad, honradez y eficacia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stats-section" class="bg-white relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.06)] z-[32]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-14 reveal">
+                        <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-3 uppercase">Números que hablan por nosotros</h2>
+                        <p class="text-gray-500 text-lg max-w-xl mx-auto">No son cifras de una multinacional. Son las de tu agencia, en Guadalupe.</p>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+                        <div class="agency-stat-card bg-gradient-to-br from-reale-dark to-[#002046] rounded-3xl p-8 text-center reveal" style="transition-delay:0ms;">
+                            <div class="w-14 h-14 bg-reale-yellow bg-opacity-15 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                                <i data-lucide="users" class="w-7 h-7 text-reale-yellow"></i>
+                            </div>
+                            <p class="font-heading text-5xl text-reale-yellow uppercase leading-none mb-1 stat-counter"
+                               data-count="1700" data-suffix="+" data-duration="2000">1.700+</p>
+                            <p class="text-blue-200 text-sm leading-snug mt-2">clientes activos<br>protegidos</p>
+                        </div>
+                        <div class="agency-stat-card bg-white border border-gray-100 rounded-3xl p-8 text-center shadow-sm reveal" style="transition-delay:100ms;">
+                            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                                <i data-lucide="car" class="w-7 h-7 text-reale-blue"></i>
+                            </div>
+                            <p class="font-heading text-5xl text-reale-dark uppercase leading-none mb-1 stat-counter"
+                               data-count="600" data-suffix="+" data-duration="1800">600+</p>
+                            <p class="text-gray-500 text-sm leading-snug mt-2">vehículos<br>asegurados</p>
+                        </div>
+                        <div class="agency-stat-card bg-white border border-gray-100 rounded-3xl p-8 text-center shadow-sm reveal" style="transition-delay:200ms;">
+                            <div class="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                                <i data-lucide="clock" class="w-7 h-7 text-reale-yellow"></i>
+                            </div>
+                            <p class="font-heading text-5xl text-reale-dark uppercase leading-none mb-1 stat-counter"
+                               data-count="24" data-suffix="h" data-duration="1400">24h</p>
+                            <p class="text-gray-500 text-sm leading-snug mt-2">tiempo máximo<br>de respuesta</p>
+                        </div>
+                        <div class="agency-stat-card bg-gradient-to-br from-reale-yellow to-yellow-400 rounded-3xl p-8 text-center reveal" style="transition-delay:300ms;">
+                            <div class="w-14 h-14 bg-white bg-opacity-30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-reale-dark"></i>
+                            </div>
+                            <p class="font-heading text-5xl text-reale-dark uppercase leading-none mb-1">100%</p>
+                            <p class="text-reale-dark text-sm font-semibold leading-snug mt-2 opacity-80">respaldados por<br>Reale Mutua</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-gray-50 relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.08)] z-[35]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 reveal">
+                        <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-4 uppercase">Lo que dicen nuestros clientes</h2>
+                        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Más de 1.700 familias y negocios en Guadalupe y alrededores ya confían en nosotros.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 shadow-sm reveal flex flex-col hover:border-reale-yellow hover:shadow-[0_12px_32px_-8px_rgba(0,56,118,0.1)] hover:-translate-y-1" style="transition-delay:0ms;">
+                            <div class="flex gap-1 mb-5">
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <div class="relative flex-grow">
+                                <svg class="absolute -top-1 -left-1 w-8 h-8 text-reale-yellow opacity-30" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                                </svg>
+                                <p class="text-gray-600 text-sm leading-relaxed pl-6">"Llevamos más de diez años con ellos. Cuando tuve el accidente, me gestionaron todo sin que yo tuviera que llamar a ningún lado. Eso no tiene precio."</p>
+                            </div>
+                            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-50">
+                                <div class="w-10 h-10 rounded-full bg-reale-blue flex items-center justify-center text-white font-bold text-sm flex-shrink-0">MG</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">María G.</p>
+                                    <p class="text-gray-500 text-xs">Clienta desde 2013 · Seguro de Hogar y Coche</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 shadow-sm reveal flex flex-col hover:border-reale-yellow hover:shadow-[0_12px_32px_-8px_rgba(0,56,118,0.1)] hover:-translate-y-1" style="transition-delay:100ms;">
+                            <div class="flex gap-1 mb-5">
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <div class="relative flex-grow">
+                                <svg class="absolute -top-1 -left-1 w-8 h-8 text-reale-yellow opacity-30" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                                </svg>
+                                <p class="text-gray-600 text-sm leading-relaxed pl-6">"Cambié de compañía pensando que iba a ser un lío. Me lo resolvieron en un día. Y con mejor cobertura y precio."</p>
+                            </div>
+                            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-50">
+                                <div class="w-10 h-10 rounded-full bg-reale-yellow flex items-center justify-center text-reale-dark font-bold text-sm flex-shrink-0">JP</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Javier P.</p>
+                                    <p class="text-gray-500 text-xs">Cliente desde 2020 · Seguro de Coche</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-3xl p-8 transition-all duration-300 border border-gray-100 shadow-sm reveal flex flex-col hover:border-reale-yellow hover:shadow-[0_12px_32px_-8px_rgba(0,56,118,0.1)] hover:-translate-y-1" style="transition-delay:200ms;">
+                            <div class="flex gap-1 mb-5">
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 text-reale-yellow fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <div class="relative flex-grow">
+                                <svg class="absolute -top-1 -left-1 w-8 h-8 text-reale-yellow opacity-30" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                                </svg>
+                                <p class="text-gray-600 text-sm leading-relaxed pl-6">"Lo que valoro es que siempre hay alguien al teléfono. No un robot, no una grabación. Una persona que te conoce y te resuelve."</p>
+                            </div>
+                            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-50">
+                                <div class="w-10 h-10 rounded-full bg-reale-blue flex items-center justify-center text-white font-bold text-sm flex-shrink-0">AL</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Ana L.</p>
+                                    <p class="text-gray-500 text-xs">Clienta desde 2018 · Seguro de Vida</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-gray-400 mt-10">Testimonios reales de clientes de la agencia. Nombres abreviados por privacidad.</p>
+                </div>
+            </section>
+
+            <section id="nosotros-section" class="bg-white relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.1)] z-40">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <div class="order-2 lg:order-1 relative reveal-left">
+                            <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774627271/ChatGPT_Image_27_mar_2026_17_01_05_gh7egi.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 opacity-[0.04] pointer-events-none">
+                            <img src="https://res.cloudinary.com/dg3peytgm/image/upload/q_auto/f_auto/v1774626027/nosotros5_f27zgp.png" alt="Equipo SuperSeguros BR" class="w-3/4 md:w-4/5 mx-auto h-auto drop-shadow-xl relative z-10">
+                        </div>
+                        <div class="order-1 lg:order-2 reveal-right">
+                            <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-6 uppercase">Tu Agencia de Confianza en Guadalupe</h2>
+                            <p class="text-gray-600 text-lg mb-6 leading-relaxed pl-4 border-l-4 border-reale-yellow">
+                                Detrás de SuperSeguros BR hay un equipo de personas dedicadas íntegramente a proteger tu tranquilidad. No somos una centralita automática; somos tus vecinos, tus asesores y tus defensores cuando ocurre un imprevisto.
+                            </p>
+                            <p class="text-gray-600 text-lg mb-8 leading-relaxed pl-4 border-l-4 border-reale-yellow">
+                                Como <strong>Agencia Exclusiva Reale</strong>, combinamos el respaldo de una de las aseguradoras más solventes de Europa con el trato cercano, honesto y directo que te mereces.
+                            </p>
+                            
+                            <div class="flex flex-col gap-4 mt-2">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-reale-yellow bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="map-pin" class="w-6 h-6 text-reale-dark"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-800">Nos tienes cerca cuando nos necesitas</p>
+                                        <p class="text-gray-500 text-sm">Av. de Los Jerónimos, 126 · 30107 Guadalupe, Murcia</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-reale-blue bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="phone" class="w-6 h-6 text-reale-blue"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-800">968 85 96 11</p>
+                                        <p class="text-gray-500 text-sm">L-J 9:00–17:00 · V 9:00–13:30</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-reale-blue bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="mail" class="w-6 h-6 text-reale-blue"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-800">ar.guadalupe@agencia.reale.es</p>
+                                        <p class="text-gray-500 text-sm">Respondemos en menos de 24 horas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-100 flex flex-wrap gap-3">
+                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-reale-blue flex-shrink-0"></i>
+                                    <span class="text-xs font-semibold text-gray-600">Mediador DGS nº 33956</span>
+                                </div>
+                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2">
+                                    <i data-lucide="award" class="w-4 h-4 text-reale-yellow flex-shrink-0"></i>
+                                    <span class="text-xs font-semibold text-gray-600">Agencia Exclusiva Reale</span>
+                                </div>
+                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>
+                                    <span class="text-xs font-semibold text-gray-600">Mediador 44393</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-gradient-to-br from-[#001e40] to-[#002654] relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 text-white shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.2)] z-[42] overflow-hidden">
+                <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-reale-blue opacity-20 blur-3xl pointer-events-none rounded-full"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-16 reveal">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-white bg-opacity-10 text-reale-yellow border border-reale-yellow border-opacity-30 font-semibold text-sm mb-6 tracking-widest uppercase">
+                            Cuando más nos necesitas
+                        </span>
+                        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl uppercase leading-tight mb-5">
+                            Cuando algo va mal,<br>
+                            <span class="text-reale-yellow">nosotros gestionamos.</span>
+                        </h2>
+                        <p class="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed">
+                            La diferencia de tener una agencia local es exactamente esta: cuando tienes un siniestro, no empiezas de cero. Nos llamas a nosotros y nosotros nos encargamos de todo lo demás.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-6 mb-16 reveal">
+                        <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-3xl p-8">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 bg-red-500 bg-opacity-20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="x" class="w-5 h-5 text-red-400"></i>
+                                </div>
+                                <h3 class="font-heading text-xl uppercase text-white opacity-70">Sin una agencia de confianza</h3>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-blue-300 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="minus" class="w-3 h-3 text-red-400"></i>
+                                    </span>
+                                    Llamas a un número de atención al cliente genérico y esperas en cola
+                                </li>
+                                <li class="flex items-start gap-3 text-blue-300 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="minus" class="w-3 h-3 text-red-400"></i>
+                                    </span>
+                                    Repites tu caso a cada agente diferente que te atiende
+                                </li>
+                                <li class="flex items-start gap-3 text-blue-300 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="minus" class="w-3 h-3 text-red-400"></i>
+                                    </span>
+                                    Gestionas la documentación, los plazos y el seguimiento tú solo
+                                </li>
+                                <li class="flex items-start gap-3 text-blue-300 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="minus" class="w-3 h-3 text-red-400"></i>
+                                    </span>
+                                    No sabes si el proceso va bien o mal hasta que recibes una notificación
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-reale-yellow bg-opacity-10 border border-reale-yellow border-opacity-30 rounded-3xl p-8">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 bg-reale-yellow bg-opacity-20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-reale-yellow"></i>
+                                </div>
+                                <h3 class="font-heading text-xl uppercase text-white">Con SuperSeguros BR</h3>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-blue-100 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-reale-yellow bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="check" class="w-3 h-3 text-reale-yellow"></i>
+                                    </span>
+                                    Llamas directamente a tu agente: alguien que ya te conoce y conoce tu póliza
+                                </li>
+                                <li class="flex items-start gap-3 text-blue-100 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-reale-yellow bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="check" class="w-3 h-3 text-reale-yellow"></i>
+                                    </span>
+                                    Nosotros gestionamos la comunicación con Reale. Tú no tienes que hablar con nadie más
+                                </li>
+                                <li class="flex items-start gap-3 text-blue-100 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-reale-yellow bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="check" class="w-3 h-3 text-reale-yellow"></i>
+                                    </span>
+                                    Hacemos seguimiento activo del expediente hasta que queda completamente cerrado
+                                </li>
+                                <li class="flex items-start gap-3 text-blue-100 text-sm">
+                                    <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-reale-yellow bg-opacity-20 flex items-center justify-center">
+                                        <i data-lucide="check" class="w-3 h-3 text-reale-yellow"></i>
+                                    </span>
+                                    Te avisamos en cada paso. Sabes siempre en qué punto está tu siniestro
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center reveal">
+                        <p class="text-blue-300 text-sm mb-4">¿Tienes un siniestro ahora mismo?</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="tel:+34968859611" class="inline-flex items-center justify-center gap-2 bg-reale-yellow text-reale-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all shadow-lg">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                Llamar ahora: 968 85 96 11
+                            </a>
+                            <a href="https://wa.me/34968859611?text=Hola,%20he%20tenido%20un%20siniestro%20y%20necesito%20ayuda" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white bg-opacity-10 border border-white border-opacity-30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-reale-dark transition-all backdrop-blur-sm">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                Escribir por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="proceso-section" class="bg-gray-50 relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.08)] z-[45]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 reveal">
+                        <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-4 uppercase">Así trabajamos</h2>
+                        <p class="text-gray-600 text-lg max-w-2xl mx-auto">De la primera llamada a la gestión del siniestro, contigo en cada paso.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                        <div class="process-connector hidden md:block absolute top-10 left-[calc(16.67%+2.5rem)] right-[calc(16.67%+2.5rem)] h-0 z-0"></div>
+                        
+                        <div class="flex flex-col items-center text-center reveal" style="transition-delay:0ms;">
+                            <div class="w-20 h-20 bg-reale-yellow rounded-full flex items-center justify-center mb-6 relative z-10 shadow-lg">
+                                <i data-lucide="message-circle" class="w-9 h-9 text-reale-dark"></i>
+                            </div>
+                            <div class="bg-white rounded-3xl p-8 w-full shadow-sm border border-gray-100">
+                                <span class="block font-heading text-6xl text-gray-200 leading-none mb-3">01</span>
+                                <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Cuéntanos qué necesitas</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Llámanos, escríbenos por WhatsApp o rellena el formulario. Nos ponemos en marcha de inmediato, sin burocracia.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center text-center reveal" style="transition-delay:150ms;">
+                            <div class="w-20 h-20 bg-reale-blue rounded-full flex items-center justify-center mb-6 relative z-10 shadow-lg">
+                                <i data-lucide="file-text" class="w-9 h-9 text-white"></i>
+                            </div>
+                            <div class="bg-white rounded-3xl p-8 w-full shadow-sm border border-gray-100">
+                                <span class="block font-heading text-6xl text-gray-200 leading-none mb-3">02</span>
+                                <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Preparamos tu propuesta</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Estudiamos tu situación y te presentamos la solución más adecuada: clara, adaptada a ti y sin letra pequeña.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center text-center reveal" style="transition-delay:300ms;">
+                            <div class="w-20 h-20 bg-reale-yellow rounded-full flex items-center justify-center mb-6 relative z-10 shadow-lg">
+                                <i data-lucide="shield-check" class="w-9 h-9 text-reale-dark"></i>
+                            </div>
+                            <div class="bg-white rounded-3xl p-8 w-full shadow-sm border border-gray-100">
+                                <span class="block font-heading text-6xl text-gray-200 leading-none mb-3">03</span>
+                                <h3 class="font-heading text-2xl text-reale-dark mb-3 uppercase">Nos encargamos de todo</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Desde la firma hasta la gestión de cualquier siniestro. Somos tu agencia para lo bueno y para lo que no esperabas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 bg-white rounded-3xl border border-gray-100 shadow-sm p-6 flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-reale-yellow bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone-call" class="w-6 h-6 text-reale-dark"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">¿Prefieres hablar directamente?</p>
+                                <p class="text-gray-500 text-sm">Llámanos y te atendemos en el momento. Sin formularios, sin esperas.</p>
+                            </div>
+                        </div>
+                        <a href="tel:+34968859611" class="flex-shrink-0 bg-reale-blue text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-reale-dark transition-colors shadow-md flex items-center gap-2 whitespace-nowrap">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            968 85 96 11
+                        </a>
+                    </div>
+                    
+                    <div id="faq-section" class="mt-24 reveal">
+                        <div class="text-center mb-12">
+                            <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-4 uppercase">Preguntas frecuentes</h2>
+                            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Las dudas más habituales, respondidas sin rodeos.</p>
+                        </div>
+                        <div class="max-w-3xl mx-auto space-y-3">
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:0ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Cuánto tarda en hacerse efectivo mi seguro?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">En la mayoría de los casos entra en vigor al día siguiente de la firma, o el mismo día si lo necesitas. Si tienes un vehículo sin cobertura ahora mismo, llámanos directamente al 968 859 611 y lo gestionamos hoy.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:80ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Puedo cambiar de seguro aunque no haya vencido?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">Sí. Puedes cambiar de compañía en cualquier momento, aunque tu póliza esté vigente. Te asesoramos para que no pierdas ni un día de cobertura y te salgas de tu situación actual sin complicaciones ni sustos.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:160ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Qué hago si tengo un siniestro?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">Llámanos al 968 859 611 o escríbenos por WhatsApp. Te guiamos en los primeros pasos, gestionamos la comunicación con Reale y hacemos seguimiento hasta que el siniestro esté cerrado. No estás solo en esto.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:240ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Tengo que venir a la oficina en persona?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">No es necesario. Gestionamos la mayoría de trámites por teléfono, WhatsApp o email. Pero si prefieres venir a vernos, estamos en Av. de Los Jerónimos, 126, Guadalupe, de lunes a jueves de 9:00 a 17:00 y los viernes hasta las 13:30.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:320ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Reale es una compañía solvente y de confianza?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">Reale Mutua lleva más de 190 años operando. Es una mutua sin accionistas externos: sus beneficios refuerzan la compañía y repercuten en los asegurados, no en dividendos ajenos. Opera bajo regulación europea Solvencia II y tiene presencia en varios países de Europa y América Latina.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:400ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Qué diferencia hay entre contratar con una agencia y hacerlo online?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">Contratar online puede ser más barato en el momento. Pero cuando tienes un siniestro, estás solo. Con nosotros, tienes un agente que conoce tu póliza, gestiona el expediente por ti y hace seguimiento hasta el cierre. Eso no lo ofrece ningún comparador.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item reveal bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" style="transition-delay:480ms;">
+                                <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                                    <span class="font-heading text-xl text-reale-dark uppercase pr-4">¿Puedo asegurar más de un vehículo o producto en la misma agencia?</span>
+                                    <i data-lucide="plus" class="w-5 h-5 text-reale-blue flex-shrink-0 faq-icon" style="transition:transform .3s ease;"></i>
+                                </button>
+                                <div class="faq-answer px-6 pb-6 border-t border-gray-100">
+                                    <p class="text-gray-600 leading-relaxed pt-5">Sí, y es precisamente lo más recomendable. Cuantos más productos tienes con nosotros, mejor conocemos tu situación y más fácil es gestionar cualquier incidencia. Además, tener varios productos con Reale puede suponer condiciones más favorables.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto-section" class="bg-white relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-24 pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.08)] z-[47]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 reveal">
+                        <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-4 uppercase">Estamos aquí para ti</h2>
+                        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Ven a vernos, llámanos o escríbenos. Como prefieras. Siempre hay alguien dispuesto a atenderte.</p>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+                        <div class="flex flex-col gap-8 reveal">
+                            <div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] bg-gray-100 flex items-end">
+                                <img src="https://res.cloudinary.com/dg3peytgm/image/upload/q_auto/f_auto/v1775951983/ChatGPT_Image_9_abr_2026_21_10_38_1_inwhgf.png" alt="Oficina SuperSeguros BR en Guadalupe" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-reale-dark/90 to-transparent px-6 py-5">
+                                    <p class="text-white font-heading text-xl uppercase leading-tight">Tu agencia en Guadalupe</p>
+                                    <p class="text-blue-200 text-sm">Av. de Los Jerónimos, 126 · Murcia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="contact-card bg-gray-50 rounded-2xl p-5 border border-gray-100 flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-reale-blue rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-0.5">Teléfono</p>
+                                        <a href="tel:+34968859611" class="font-bold text-reale-dark text-base hover:text-reale-blue transition-colors">968 85 96 11</a>
+                                    </div>
+                                </div>
+                                <div class="contact-card bg-gray-50 rounded-2xl p-5 border border-gray-100 flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-reale-blue rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-0.5">Email</p>
+                                        <a href="mailto:ar.guadalupe@agencia.reale.es" class="font-bold text-reale-dark text-sm hover:text-reale-blue transition-colors break-all">ar.guadalupe@agencia.reale.es</a>
+                                    </div>
+                                </div>
+                                <div class="contact-card bg-gray-50 rounded-2xl p-5 border border-gray-100 flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-reale-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="clock" class="w-5 h-5 text-reale-dark"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-0.5">Horario</p>
+                                        <p class="text-gray-800 text-sm font-medium leading-relaxed">L–J: 9:00–13:30 / 15:00–17:00<br>V: 9:00–13:30</p>
+                                    </div>
+                                </div>
+                                <div class="contact-card bg-gray-50 rounded-2xl p-5 border border-gray-100 flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background-color:#25D366;">
+                                        <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-0.5">WhatsApp</p>
+                                        <a href="https://wa.me/34968859611" target="_blank" class="font-bold text-gray-800 text-sm hover:text-reale-blue transition-colors">Escríbenos ahora</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 mt-2">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                <p class="text-xs text-gray-400">Agencia Exclusiva Reale · Mediador inscrito DGS nº 33956 · Mediador 44393</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reveal rounded-3xl overflow-hidden shadow-xl border border-gray-100 min-h-[480px] lg:min-h-0">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Avenida+de+los+Jer%C3%B3nimos+126+Guadalupe+Murcia+Spain&output=embed"
+                                width="100%"
+                                height="100%"
+                                style="border:0; min-height: 480px; display:block;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Ubicación SuperSeguros BR — Av. Los Jerónimos 126, Guadalupe, Murcia">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-reale-yellow relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-10 py-16 shadow-[0_-10px_30px_-10px_rgba(0,0,0,0.2)] z-50">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+                    <h2 class="font-heading text-3xl md:text-4xl text-reale-dark mb-6 uppercase">Sin rodeos. Sin letra pequeña. Solo lo que necesitas.</h2>
+                    <p class="text-reale-dark font-medium mb-8">Cuéntanos qué buscas y te preparamos un presupuesto a medida, sin compromiso y sin esperas.</p>
+                    <button onclick="navigateTo('quote')" class="bg-reale-dark text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-900 transition-colors shadow-lg mb-10">
+                        Solicitar Presupuesto
+                    </button>
+                    <div class="flex flex-wrap justify-center gap-6 mt-2">
+                        <span class="cta-feature">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Respuesta en menos de 24h
+                        </span>
+                        <span class="cta-feature">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Sin compromiso de contratación
+                        </span>
+                        <span class="cta-feature">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Un agente real te atiende
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <div id="modal-quote" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-reale-dark/80 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
+        
+        <div class="modal-panel relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl">
+            
+            <div class="bg-gradient-to-r from-reale-dark to-reale-blue px-8 py-6 text-white relative overflow-hidden rounded-t-3xl">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-white opacity-5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                <div class="flex justify-between items-start relative z-10">
+                    <div>
+                        <h2 class="font-heading text-4xl uppercase mb-1">Pide tu presupuesto</h2>
+                        <p class="text-blue-200 text-sm">Rellena el formulario y un agente real te contacta en menos de 24h. Sin rodeos.</p>
+                    </div>
+                    <button onclick="closeQuoteModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors flex-shrink-0 ml-4">
+                        <i data-lucide="x" class="w-5 h-5 text-white"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-reale-yellow opacity-60"></div>
+            </div>
+
+            <div class="p-8">
+                <form action="https://formsubmit.co/ar.guadalupe@agencia.reale.es" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo presupuesto desde la web (SuperSeguros BR)">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://tudominio.es/gracias">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5">¿Qué seguro necesitas?</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="seguro-selector">
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Coche" class="sr-only" required>
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="car" class="w-4 h-4 flex-shrink-0"></i> Coche
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Hogar" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="home" class="w-4 h-4 flex-shrink-0"></i> Hogar
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Vida" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="heart-pulse" class="w-4 h-4 flex-shrink-0"></i> Vida
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Moto" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="bike" class="w-4 h-4 flex-shrink-0"></i> Moto
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Empresas" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="briefcase" class="w-4 h-4 flex-shrink-0"></i> Empresas
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Salud" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="stethoscope" class="w-4 h-4 flex-shrink-0"></i> Salud
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Otro" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="more-horizontal" class="w-4 h-4 flex-shrink-0"></i> Otro
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Nombre</label>
+                            <input type="text" name="Nombre" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-reale-blue focus:border-transparent" placeholder="Carlos" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Apellidos</label>
+                            <input type="text" name="Apellidos" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-reale-blue focus:border-transparent" placeholder="Martínez García" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Teléfono</label>
+                            <input type="tel" name="Telefono" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-reale-blue focus:border-transparent" placeholder="600 000 000" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
+                            <input type="email" name="Email" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-reale-blue focus:border-transparent" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5">¿Algún detalle que debamos saber? <span class="font-normal text-gray-400">(Opcional)</span></label>
+                            <textarea name="Comentarios" rows="2" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-reale-blue focus:border-transparent resize-none" placeholder="Ej: Mi póliza actual vence en junio..."></textarea>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" name="Acepta_Privacidad" value="Sí" class="mt-0.5 w-4 h-4 rounded border-gray-300 text-reale-blue focus:ring-reale-blue" required>
+                                <span class="text-sm text-gray-500">He leído y acepto la <a href="#" class="text-reale-blue hover:underline font-medium">política de privacidad</a> y el tratamiento de mis datos para recibir información.</span>
+                            </label>
+                        </div>
+
+                        <div class="sm:col-span-2 flex items-center justify-center gap-6 py-3 px-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <i data-lucide="lock" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                <span>Datos protegidos</span>
+                            </div>
+                            <div class="w-px h-4 bg-gray-200"></div>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <i data-lucide="clock" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                <span>Respuesta < 24h</span>
+                            </div>
+                            <div class="w-px h-4 bg-gray-200"></div>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
+                                <span>Sin compromiso</span>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <button type="submit" class="w-full bg-reale-blue text-white font-bold text-base py-4 rounded-xl hover:bg-reale-dark transition-colors flex justify-center items-center gap-2">
+                                Solicitar presupuesto gratuito
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                            <p class="text-center text-xs text-gray-400 mt-3">Sin compromiso. Te respondemos en menos de 24 horas.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-reale-dark text-blue-100 relative overflow-hidden">
+        <div class="footer-top-accent"></div>
+        <div class="absolute inset-0 opacity-[0.025]" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px; pointer-events:none;"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+                
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774627271/ChatGPT_Image_27_mar_2026_17_01_05_gh7egi.png" alt="SuperSeguros BR" class="h-12 object-contain">
+                    </div>
+                    <p class="text-blue-300 text-sm leading-relaxed mb-5 max-w-xs">
+                        Tu agencia exclusiva Reale en Guadalupe, Murcia. Asesoramiento personalizado y transparente para ti, tu familia y tu negocio.
+                    </p>
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774626024/Reale_t6054x.png" alt="Reale Seguros" class="h-6 object-contain opacity-70">
+                        <span class="text-blue-400 text-xs">Agencia Exclusiva</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 flex items-center justify-center hover:bg-reale-blue hover:border-reale-blue transition-all">
+                            <i data-lucide="facebook" class="w-4 h-4 text-blue-300"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 flex items-center justify-center hover:bg-reale-blue hover:border-reale-blue transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4 text-blue-300"></i>
+                        </a>
+                        <a href="https://wa.me/34968859611" target="_blank" aria-label="WhatsApp" class="w-9 h-9 rounded-xl bg-white bg-opacity-5 border border-white border-opacity-10 flex items-center justify-center hover:border-green-500 transition-all" style="hover:background-color:#25D366">
+                            <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="text-white font-heading text-xl uppercase tracking-wide mb-5 flex items-center gap-2">
+                        <span class="w-5 h-0.5 bg-reale-yellow inline-block"></span>
+                        Nuestros seguros
+                    </h5>
+                    <ul class="space-y-2.5">
+                        <li><button onclick="navigateTo('quote','coche')" class="footer-link">Seguro de Coche</button></li>
+                        <li><button onclick="navigateTo('quote','hogar')" class="footer-link">Seguro de Hogar</button></li>
+                        <li><button onclick="navigateTo('quote','vida')" class="footer-link">Seguro de Vida</button></li>
+                        <li><button onclick="navigateTo('quote','empresas')" class="footer-link">Para Empresas</button></li>
+                        <li><button onclick="navigateTo('quote','moto')" class="footer-link">Seguro de Moto</button></li>
+                        <li><button onclick="navigateTo('quote','salud')" class="footer-link">Seguro de Salud</button></li>
+                        <li><button onclick="navigateTo('quote','viaje')" class="footer-link">Seguro de Viaje</button></li>
+                        <li><button onclick="navigateTo('quote','decesos')" class="footer-link">Decesos</button></li>
+                        <li><button onclick="navigateTo('quote','accidentes')" class="footer-link">Accidentes</button></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="text-white font-heading text-xl uppercase tracking-wide mb-5 flex items-center gap-2">
+                        <span class="w-5 h-0.5 bg-reale-yellow inline-block"></span>
+                        Información
+                    </h5>
+                    <ul class="space-y-2.5">
+                        <li><button onclick="navigateTo('home')" class="footer-link">Inicio</button></li>
+                        <li><button onclick="scrollToSeguros()" class="footer-link">Nuestros Seguros</button></li>
+                        <li><button onclick="scrollToSection('nosotros-section')" class="footer-link">Sobre Nosotros</button></li>
+                        <li><button onclick="scrollToSection('proceso-section')" class="footer-link">Así Trabajamos</button></li>
+                        <li><button onclick="scrollToSection('faq-section')" class="footer-link">Preguntas Frecuentes</button></li>
+                        <li><button onclick="scrollToSection('contacto-section')" class="footer-link">Contacto y Ubicación</button></li>
+                        <li><button onclick="navigateTo('quote')" class="footer-link">Solicitar Presupuesto</button></li>
+                    </ul>
+                    <div class="mt-7 pt-5 border-t border-white border-opacity-10">
+                        <div class="flex items-start gap-2 mb-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-reale-yellow mt-0.5 flex-shrink-0"></i>
+                            <p class="text-blue-400 text-xs leading-snug">Mediador de Seguros inscrito en la DGS con número <strong class="text-blue-300">33956</strong></p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0"></i>
+                            <p class="text-blue-400 text-xs leading-snug">Código de mediador Reale: <strong class="text-blue-300">44393</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="text-white font-heading text-xl uppercase tracking-wide mb-5 flex items-center gap-2">
+                        <span class="w-5 h-0.5 bg-reale-yellow inline-block"></span>
+                        Contacto
+                    </h5>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:+34968859611" class="flex items-start gap-3 group">
+                                <div class="w-8 h-8 rounded-lg bg-reale-blue bg-opacity-30 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-reale-blue transition-colors">
+                                    <i data-lucide="phone" class="w-4 h-4 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-blue-400 uppercase tracking-wider font-semibold">Teléfono</p>
+                                    <p class="text-white font-bold text-sm group-hover:text-reale-yellow transition-colors">968 85 96 11</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:ar.guadalupe@agencia.reale.es" class="flex items-start gap-3 group">
+                                <div class="w-8 h-8 rounded-lg bg-reale-blue bg-opacity-30 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-reale-blue transition-colors">
+                                    <i data-lucide="mail" class="w-4 h-4 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-blue-400 uppercase tracking-wider font-semibold">Email</p>
+                                    <p class="text-white font-bold text-xs group-hover:text-reale-yellow transition-colors break-all">ar.guadalupe@agencia.reale.es</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-reale-blue bg-opacity-30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-blue-400 uppercase tracking-wider font-semibold">Dirección</p>
+                                    <p class="text-white text-sm font-medium">Av. de Los Jerónimos, 126</p>
+                                    <p class="text-blue-300 text-xs">30107 Guadalupe, Murcia</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-reale-yellow bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="clock" class="w-4 h-4 text-reale-yellow"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-blue-400 uppercase tracking-wider font-semibold">Horario</p>
+                                    <p class="text-white text-sm font-medium">L–J: 9:00–13:30 / 15:00–17:00</p>
+                                    <p class="text-blue-300 text-xs">V: 9:00–13:30</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/34968859611?text=Hola,%20me%20gustaría%20pedir%20información%20sobre%20un%20seguro" target="_blank"
+                       class="mt-6 flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm transition-all"
+                       style="background-color:#25D366; color:#fff;">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Escríbenos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-5">
+                <div class="flex-1 h-px bg-white opacity-[0.08]"></div>
+                <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774626024/Reale_t6054x.png" alt="" class="h-5 object-contain opacity-20">
+                <div class="flex-1 h-px bg-white opacity-[0.08]"></div>
+            </div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-400">
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-2">
+                    <span class="text-blue-500">© 2026 SUPERSEGUROS BR, S.L. Todos los derechos reservados.</span>
+                    <span class="hidden md:inline text-blue-800">|</span>
+                    <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Política de Cookies</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-1.5 bg-white bg-opacity-[0.04] px-3 py-1.5 rounded-lg border border-white border-opacity-[0.07] whitespace-nowrap">
+                        <i data-lucide="shield" class="w-3 h-3 text-reale-yellow flex-shrink-0"></i>
+                        <span>Solvencia II · Reale Mutua</span>
+                    </span>
+                    <button id="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="w-8 h-8 rounded-lg bg-reale-blue flex items-center justify-center hover:bg-reale-blue transition-colors" aria-label="Volver arriba">
+                        <i data-lucide="chevron-up" class="w-4 h-4 text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/34968859611?text=Hola,%20me%20gustaría%20pedir%20información%20sobre%20un%20seguro" 
+       target="_blank" 
+       class="hover:scale-110 transition-transform wa-btn"
+       style="position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25);text-decoration:none;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        // ─── 1. SISTEMA REVEAL UNIFICADO ───────────────────────────
+        function triggerReveals() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            const windowH = window.innerHeight;
+            reveals.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < windowH - 90) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', triggerReveals, { passive: true });
+        setTimeout(triggerReveals, 120);
+
+        // ─── 2. PARALLAX HERO (sutil, solo en desktop) ─────────────
+        (function() {
+            const heroSection = document.getElementById('hero-section');
+            if (!heroSection) return;
+            const pattern = heroSection.querySelector('.hero-pattern');
+            if (!pattern) return;
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        if (window.innerWidth >= 1024) {
+                            pattern.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        })();
+
+        // ─── 3. SOMBRA NAV AL SCROLL ────────────────────────────────
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.style.boxShadow = window.scrollY > 10
+                ? '0 1px 24px rgba(0,0,0,.09)'
+                : 'none';
+        }, { passive: true });
+
+        // ─── 4. NAV ACTIVO POR SCROLL (IntersectionObserver) ────────
+        (function() {
+            const sectionMap = {
+                'seguros-section':  'nav-btn-seguros',
+                'proceso-section':  'nav-btn-proceso',
+                'nosotros-section': 'nav-btn-nosotros',
+                'contacto-section': 'nav-btn-contacto',
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    const btnId = sectionMap[entry.target.id];
+                    if (!btnId) return;
+                    const btn = document.getElementById(btnId);
+                    if (!btn) return;
+
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('nav-active'));
+                        btn.classList.add('nav-active');
+                    }
+                });
+            }, { threshold: 0.25, rootMargin: '-80px 0px 0px 0px' });
+
+            Object.keys(sectionMap).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) observer.observe(el);
+            });
+        })();
+
+        // ─── 5. MENÚ MÓVIL ──────────────────────────────────────────
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu    = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('menu-open');
+            if (isOpen) {
+                mobileMenu.classList.remove('menu-open');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 350);
+            } else {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => mobileMenu.classList.add('menu-open'));
+            }
+        });
+
+        // ─── 6. FUNCIONES DE NAVEGACIÓN ─────────────────────────────
+        function scrollToSeguros() {
+            mobileMenu.classList.remove('menu-open');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 350);
+            const target = document.getElementById('seguros-section');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function scrollToSection(id) {
+            mobileMenu.classList.remove('menu-open');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 350);
+            const target = document.getElementById(id);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function navigateTo(view, selectCategory = null) {
+            mobileMenu.classList.remove('menu-open');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 350);
+
+            if (view === 'quote') { openQuoteModal(selectCategory); return; }
+
+            const viewHome = document.getElementById('view-home');
+            if (viewHome) { viewHome.classList.remove('hidden'); viewHome.classList.add('block'); }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(triggerReveals, 200);
+        }
+
+        // ─── 7. MODAL PRESUPUESTO ───────────────────────────────────
+        function openQuoteModal(category = null) {
+            const modal = document.getElementById('modal-quote');
+            modal.classList.remove('hidden');
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+            
+            if (category) {
+                const radios = document.querySelectorAll('input[name="Tipo de Seguro"]');
+                radios.forEach(r => { if (r.value.toLowerCase() === category) r.click(); });
+            }
+        }
+
+        function closeQuoteModal() {
+            const modal = document.getElementById('modal-quote');
+            modal.classList.add('hidden');
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuoteModal(); });
+
+        // ─── 8. FAQ — ACORDEÓN CON TRANSICIÓN SUAVE ─────────────────
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon   = btn.querySelector('.faq-icon');
+            const isOpen = answer.classList.contains('faq-open');
+
+            // Cerrar todos
+            document.querySelectorAll('.faq-answer').forEach(a => {
+                a.classList.remove('faq-open');
+            });
+            document.querySelectorAll('.faq-icon').forEach(i => {
+                i.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                answer.classList.add('faq-open');
+                icon.style.transform = 'rotate(45deg)';
+            }
+        }
+
+        // ─── 9. CONTADORES ANIMADOS ──────────────────────────────────
+        function animateCounter(el, target, duration, suffix) {
+            let start = null;
+            const isFloat = target !== Math.floor(target);
+            
+            const step = ts => {
+                if (!start) start = ts;
+                const p = Math.min((ts - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+                const current = eased * target;
+                
+                el.textContent = (isFloat 
+                    ? current.toFixed(1) 
+                    : Math.floor(current).toLocaleString('es-ES')) + suffix;
+                    
+                if (p < 1) requestAnimationFrame(step);
+                else el.textContent = (isFloat 
+                    ? target.toFixed(1) 
+                    : target.toLocaleString('es-ES')) + suffix;
+            };
+            requestAnimationFrame(step);
+        }
+
+        // Disparar contadores cuando la sección entre en viewport
+        (function() {
+            const statsSection = document.getElementById('stats-section');
+            if (!statsSection) return;
+            
+            let fired = false;
+            const obs = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting && !fired) {
+                    fired = true;
+                    statsSection.querySelectorAll('[data-count]').forEach(el => {
+                        const target   = parseFloat(el.dataset.count);
+                        const duration = parseInt(el.dataset.duration || 1800);
+                        const suffix   = el.dataset.suffix || '';
+                        animateCounter(el, target, duration, suffix);
+                    });
+                }
+            }, { threshold: 0.3 });
+            
+            obs.observe(statsSection);
+        })();
+
+        // ─── 11. SCROLL TOP BUTTON — visibilidad dinámica ───────────
+        (function() {
+            const btn = document.getElementById('scroll-top-btn');
+            if (!btn) return;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 600) btn.classList.add('visible');
+                else btn.classList.remove('visible');
+            }, { passive: true });
+        })();
+    </script>
+</body>
+</html>
