@@ -364,10 +364,7 @@
            ZERO IMPACT ON DESKTOP (md/lg/xl unchanged)
            ═══════════════════════════════════════════════════════════ */
         @media (max-width: 767px) {
-            /* Prevenir scroll horizontal por translateX de reveals */
             html { overflow-x: hidden; }
-            /* reveal-left y reveal-right: convertir a translateY en móvil
-               para evitar cualquier bleed horizontal */
             .reveal-left {
                 transform: translateY(36px);
             }
@@ -380,12 +377,10 @@
             .reveal-right.active {
                 transform: translateY(0);
             }
-            /* Ticker: reducir anchura del fade en móvil */
             .ticker-wrapper::before,
             .ticker-wrapper::after {
                 width: 40px;
             }
-            /* Stats cards: condensar en 2 columnas móvil */
             .agency-stat-card {
                 padding: 1.1rem !important;
             }
@@ -402,27 +397,20 @@
                 width: 1.25rem !important;
                 height: 1.25rem !important;
             }
-            /* Modal trust bar: permitir wrap en pantallas muy estrechas */
             #modal-quote .flex.items-center.justify-center.gap-6 {
                 gap: 0.5rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            /* Contacto: mapa altura mínima razonable en móvil */
             #contacto-section .reveal.rounded-3xl iframe {
                 min-height: 260px !important;
                 height: 260px !important;
             }
-            /* Hero: evitar que los trust badges (están en la imagen oculta)
-               interfieran en cualquier breakpoint edge */
             .hero-trust-badge { display: none; }
-            /* FAQ: ligeramente más compacto en móvil */
             .faq-item button { padding: 1rem 1.25rem; }
             .faq-item button span.font-heading { font-size: 1rem; }
             .faq-answer { padding-left: 1.25rem; padding-right: 1.25rem; }
-            /* CTA final features: ajuste de tamaño para caber en una línea */
             .cta-feature { font-size: 0.78rem; gap: 4px; }
-            /* Espacio entre secciones en móvil */
             .pt-14 { padding-top: 5rem !important; }
             .pb-20 { padding-bottom: 6rem !important; }
         }
@@ -522,7 +510,7 @@
                                 <p class="text-blue-200 text-xs font-medium leading-tight mt-0.5">Agencia<br>exclusiva</p>
                             </div>
                             <div class="absolute bottom-28 left-1/2 transform -translate-x-1/2 w-3/4 h-8 bg-black opacity-30 blur-xl rounded-full"></div>
-                            <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774626050/BR_1_md6blh.png" alt="Superhéroe SuperSeguros BR" class="relative z-10 w-full drop-shadow-2xl">
+                            <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774626050/BR_1_md6blh.png" alt="Superhéroe SuperSeguros BR" class="relative z-10 w-full drop-shadow-2xl transform -translate-x-12 lg:-translate-x-16 scale-95 origin-bottom">
                         </div>
                     </div>
                 </div>
@@ -975,13 +963,15 @@
                                         <p class="text-gray-500 text-sm">L-J 9:00–17:00 · V 9:00–13:30</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-4">
+                                <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 bg-reale-blue bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
                                         <i data-lucide="mail" class="w-6 h-6 text-reale-blue"></i>
                                     </div>
                                     <div>
-                                        <p class="font-bold text-gray-800">ar.guadalupe@agencia.reale.es</p>
-                                        <p class="text-gray-500 text-sm">Respondemos en menos de 24 horas</p>
+                                        <p class="font-bold text-gray-800 text-sm">Producción: <span class="font-normal">noelia.lopez.cerezo@agencia.reale.es</span></p>
+                                        <p class="font-bold text-gray-800 text-sm">Siniestros: <span class="font-normal">antonio.beltran.lopez@agencia.reale.es</span></p>
+                                        <p class="font-bold text-gray-800 text-sm">Administración: <span class="font-normal">diego.beltran.ruiz@agencia.reale.es</span></p>
+                                        <p class="text-gray-500 text-sm mt-1">Respondemos en menos de 24 horas</p>
                                     </div>
                                 </div>
                             </div>
@@ -1269,13 +1259,18 @@
                                         <a href="tel:+34968859611" class="font-bold text-reale-dark text-sm hover:text-reale-blue transition-colors">968 85 96 11</a>
                                     </div>
                                 </div>
-                                <div class="contact-card bg-gray-50 rounded-2xl p-4 border border-gray-100 flex flex-col items-start gap-3">
+                                <div class="contact-card bg-gray-50 rounded-2xl p-4 border border-gray-100 flex flex-col items-start gap-3 col-span-2 lg:col-span-1">
                                     <div class="w-9 h-9 bg-reale-blue rounded-xl flex items-center justify-center flex-shrink-0">
                                         <i data-lucide="mail" class="w-4 h-4 text-white"></i>
                                     </div>
-                                    <div>
-                                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-0.5">Email</p>
-                                        <a href="mailto:ar.guadalupe@agencia.reale.es" class="font-bold text-reale-dark text-xs hover:text-reale-blue transition-colors leading-tight block">ar.guadalupe@<br>agencia.reale.es</a>
+                                    <div class="w-full">
+                                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Emails</p>
+                                        <p class="text-[10px] text-gray-500 uppercase">Producción</p>
+                                        <a href="mailto:noelia.lopez.cerezo@agencia.reale.es" class="font-bold text-reale-dark text-[11px] hover:text-reale-blue transition-colors leading-tight block mb-1 break-all">noelia.lopez.cerezo@agencia.reale.es</a>
+                                        <p class="text-[10px] text-gray-500 uppercase">Siniestros</p>
+                                        <a href="mailto:antonio.beltran.lopez@agencia.reale.es" class="font-bold text-reale-dark text-[11px] hover:text-reale-blue transition-colors leading-tight block mb-1 break-all">antonio.beltran.lopez@agencia.reale.es</a>
+                                        <p class="text-[10px] text-gray-500 uppercase">Administración</p>
+                                        <a href="mailto:diego.beltran.ruiz@agencia.reale.es" class="font-bold text-reale-dark text-[11px] hover:text-reale-blue transition-colors leading-tight block break-all">diego.beltran.ruiz@agencia.reale.es</a>
                                     </div>
                                 </div>
                                 <div class="contact-card bg-gray-50 rounded-2xl p-4 border border-gray-100 flex flex-col items-start gap-3">
@@ -1367,7 +1362,7 @@
             </div>
 
             <div class="p-8">
-                <form action="https://formsubmit.co/ar.guadalupe@agencia.reale.es" method="POST">
+                <form action="https://formsubmit.co/diego.beltran.ruiz@agencia.reale.es" method="POST">
                     <input type="hidden" name="_subject" value="Nuevo presupuesto desde la web (SuperSeguros BR)">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://tudominio.es/gracias">
@@ -1407,6 +1402,12 @@
                                     </div>
                                 </label>
                                 <label class="seguro-option cursor-pointer">
+                                    <input type="radio" name="Tipo de Seguro" value="Mascotas" class="sr-only">
+                                    <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
+                                        <i data-lucide="paw-print" class="w-4 h-4 flex-shrink-0"></i> Mascotas
+                                    </div>
+                                </label>
+                                <label class="seguro-option cursor-pointer">
                                     <input type="radio" name="Tipo de Seguro" value="Salud" class="sr-only">
                                     <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 border-gray-200 hover:border-reale-blue transition-colors text-sm font-medium text-gray-700 seguro-label">
                                         <i data-lucide="stethoscope" class="w-4 h-4 flex-shrink-0"></i> Salud
@@ -1437,6 +1438,94 @@
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
                             <input type="email" name="Email" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-reale-blue focus:border-transparent" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div id="dynamic-fields-coche" class="dynamic-form-group sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 hidden bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+                            <div class="sm:col-span-2">
+                                <p class="text-sm font-bold text-reale-blue mb-1">Datos adicionales para Seguro de Coche</p>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">DNI (Tomador, conductor y propietario)</label>
+                                <input type="text" name="DNI_Coche" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue" placeholder="Ej: 12345678A, 87654321B...">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Código Postal</label>
+                                <input type="text" name="CP_Coche" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Nº Póliza Anterior</label>
+                                <input type="text" name="Poliza_Ant_Coche" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Matrícula, Marca y Modelo</label>
+                                <input type="text" name="Vehiculo_Coche" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue" placeholder="Ej: 1234ABC, Seat Leon">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Garantías Aseguradas</label>
+                                <input type="text" name="Garantias_Coche" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue" placeholder="Ej: Todo riesgo con franquicia, terceros ampliado...">
+                            </div>
+                        </div>
+
+                        <div id="dynamic-fields-moto" class="dynamic-form-group sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 hidden bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+                            <div class="sm:col-span-2">
+                                <p class="text-sm font-bold text-reale-blue mb-1">Datos adicionales para Seguro de Moto</p>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">DNI (Tomador, conductor y propietario)</label>
+                                <input type="text" name="DNI_Moto" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Código Postal</label>
+                                <input type="text" name="CP_Moto" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Matrícula, Marca y Modelo</label>
+                                <input type="text" name="Vehiculo_Moto" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                        </div>
+
+                        <div id="dynamic-fields-vida" class="dynamic-form-group sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 hidden bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+                            <div class="sm:col-span-2">
+                                <p class="text-sm font-bold text-reale-blue mb-1">Datos adicionales para Seguro de Vida</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">DNI</label>
+                                <input type="text" name="DNI_Vida" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Fecha de Nacimiento</label>
+                                <input type="date" name="Nacimiento_Vida" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Profesión</label>
+                                <input type="text" name="Profesion_Vida" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Capitales a Asegurar</label>
+                                <input type="text" name="Capitales_Vida" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Garantías</label>
+                                <input type="text" name="Garantias_Vida" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                        </div>
+
+                        <div id="dynamic-fields-mascotas" class="dynamic-form-group sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 hidden bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+                            <div class="sm:col-span-2">
+                                <p class="text-sm font-bold text-reale-blue mb-1">Datos adicionales para Seguro de Mascotas</p>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">DNI (Dueño)</label>
+                                <input type="text" name="DNI_Mascotas" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Fecha de Nacimiento del animal</label>
+                                <input type="date" name="Nacimiento_Mascotas" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Raza y Sexo del animal</label>
+                                <input type="text" name="Raza_Sexo_Mascotas" class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl py-2 px-3 focus:outline-none focus:ring-2 focus:ring-reale-blue" placeholder="Ej: Labrador, Macho">
+                            </div>
                         </div>
 
                         <div class="sm:col-span-2">
@@ -1522,6 +1611,7 @@
                         <li><button onclick="navigateTo('quote','vida')" class="footer-link">Seguro de Vida</button></li>
                         <li><button onclick="navigateTo('quote','empresas')" class="footer-link">Para Empresas</button></li>
                         <li><button onclick="navigateTo('quote','moto')" class="footer-link">Seguro de Moto</button></li>
+                        <li><button onclick="navigateTo('quote','mascotas')" class="footer-link">Seguro de Mascotas</button></li>
                         <li><button onclick="navigateTo('quote','salud')" class="footer-link">Seguro de Salud</button></li>
                         <li><button onclick="navigateTo('quote','viaje')" class="footer-link">Seguro de Viaje</button></li>
                         <li><button onclick="navigateTo('quote','decesos')" class="footer-link">Decesos</button></li>
@@ -1573,15 +1663,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:ar.guadalupe@agencia.reale.es" class="flex items-start gap-3 group">
+                            <div class="flex items-start gap-3 group">
                                 <div class="w-8 h-8 rounded-lg bg-reale-blue bg-opacity-30 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-reale-blue transition-colors">
                                     <i data-lucide="mail" class="w-4 h-4 text-reale-yellow"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs text-blue-400 uppercase tracking-wider font-semibold">Email</p>
-                                    <p class="text-white font-bold text-xs group-hover:text-reale-yellow transition-colors break-all">ar.guadalupe@agencia.reale.es</p>
+                                    <p class="text-xs text-blue-400 uppercase tracking-wider font-semibold mb-1">Emails</p>
+                                    <a href="mailto:noelia.lopez.cerezo@agencia.reale.es" class="text-white font-bold text-[11px] hover:text-reale-yellow transition-colors break-all block">Prod: noelia.lopez.cerezo@agencia.reale.es</a>
+                                    <a href="mailto:antonio.beltran.lopez@agencia.reale.es" class="text-white font-bold text-[11px] hover:text-reale-yellow transition-colors break-all block mt-1">Sin: antonio.beltran.lopez@agencia.reale.es</a>
+                                    <a href="mailto:diego.beltran.ruiz@agencia.reale.es" class="text-white font-bold text-[11px] hover:text-reale-yellow transition-colors break-all block mt-1">Admin: diego.beltran.ruiz@agencia.reale.es</a>
                                 </div>
-                            </a>
+                            </div>
                         </li>
                         <li>
                             <div class="flex items-start gap-3">
@@ -1794,6 +1886,20 @@
         }
 
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuoteModal(); });
+
+        // Lógica de campos dinámicos
+        document.querySelectorAll('input[name="Tipo de Seguro"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Ocultamos todos primero
+                document.querySelectorAll('.dynamic-form-group').forEach(el => el.classList.add('hidden'));
+                
+                const val = this.value;
+                if(val === 'Coche') document.getElementById('dynamic-fields-coche')?.classList.remove('hidden');
+                if(val === 'Moto') document.getElementById('dynamic-fields-moto')?.classList.remove('hidden');
+                if(val === 'Vida') document.getElementById('dynamic-fields-vida')?.classList.remove('hidden');
+                if(val === 'Mascotas') document.getElementById('dynamic-fields-mascotas')?.classList.remove('hidden');
+            });
+        });
 
         // ─── 8. FAQ — ACORDEÓN CON TRANSICIÓN SUAVE ─────────────────
         function toggleFaq(btn) {
