@@ -930,11 +930,14 @@
 
             <section id="nosotros-section" class="bg-white relative rounded-t-[2.5rem] lg:rounded-t-[4rem] -mt-20 pt-14 sm:pt-24 pb-20 sm:pb-32 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.1)] z-40">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    
+                    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-14">
+                        
                         <div class="order-2 lg:order-1 relative reveal-left">
                             <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1774627271/ChatGPT_Image_27_mar_2026_17_01_05_gh7egi.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 opacity-[0.04] pointer-events-none">
                             <img src="https://res.cloudinary.com/dg3peytgm/image/upload/q_auto/f_auto/v1774626027/nosotros5_f27zgp.png" alt="Equipo SuperSeguros BR" class="w-3/4 md:w-4/5 mx-auto h-auto drop-shadow-xl relative z-10">
                         </div>
+                        
                         <div class="order-1 lg:order-2 reveal-right">
                             <h2 class="font-heading text-4xl md:text-5xl text-reale-dark mb-6 uppercase">Tu Agencia de Confianza en Guadalupe</h2>
                             <p class="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed pl-4 border-l-4 border-reale-yellow">
@@ -944,53 +947,91 @@
                                 Como <strong>Agencia Exclusiva Reale</strong>, combinamos el respaldo de una de las aseguradoras más solventes de Europa con el trato cercano, honesto y directo que te mereces.
                             </p>
                             
-                            <div class="flex flex-col gap-4 mt-2">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-reale-yellow bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="map-pin" class="w-6 h-6 text-reale-dark"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-gray-800">Nos tienes cerca cuando nos necesitas</p>
-                                        <p class="text-gray-500 text-sm">Av. de Los Jerónimos, 126 · 30107 Guadalupe, Murcia</p>
-                                    </div>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-reale-blue flex-shrink-0"></i>
+                                    <span class="text-sm font-semibold text-gray-600">Mediador DGS nº 33956</span>
                                 </div>
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-reale-blue bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="phone" class="w-6 h-6 text-reale-blue"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-gray-800">968 85 96 11</p>
-                                        <p class="text-gray-500 text-sm">L-V 9:00–13:30 · L-J 15:00–17:00</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 bg-reale-blue bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="mail" class="w-6 h-6 text-reale-blue"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-gray-800 text-sm">Producción: <span class="font-normal">noelia.lopez.cerezo@agencia.reale.es</span></p>
-                                        <p class="font-bold text-gray-800 text-sm">Siniestros: <span class="font-normal">antonio.beltran.lopez@agencia.reale.es</span></p>
-                                        <p class="font-bold text-gray-800 text-sm">Administración: <span class="font-normal">diego.beltran.ruiz@agencia.reale.es</span></p>
-                                        <p class="text-gray-500 text-sm mt-1">Respondemos en menos de 24 horas</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-6 pt-6 border-t border-gray-100 flex flex-wrap gap-3">
-                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2">
-                                    <i data-lucide="shield-check" class="w-4 h-4 text-reale-blue flex-shrink-0"></i>
-                                    <span class="text-xs font-semibold text-gray-600">Mediador DGS nº 33956</span>
-                                </div>
-                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2">
-                                    <i data-lucide="award" class="w-4 h-4 text-reale-yellow flex-shrink-0"></i>
-                                    <span class="text-xs font-semibold text-gray-600">Agencia Exclusiva Reale</span>
-                                </div>
-                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-3 py-2">
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>
-                                    <span class="text-xs font-semibold text-gray-600">Mediador 44393</span>
+                                <div class="credential-badge flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5">
+                                    <i data-lucide="award" class="w-5 h-5 text-reale-yellow flex-shrink-0"></i>
+                                    <span class="text-sm font-semibold text-gray-600">Agencia Exclusiva Reale</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="flex flex-col gap-5 reveal">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            
+                            <div class="bg-gray-50 rounded-3xl p-5 border border-gray-100 hover:bg-white hover:shadow-md transition-all duration-300 group flex items-center gap-4">
+                                <div class="w-12 h-12 bg-yellow-50 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:-translate-y-1 transition-transform">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-reale-yellow"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Nuestra oficina</p>
+                                    <p class="font-semibold text-gray-800 text-sm leading-tight">Av. de Los Jerónimos, 126<br>30107 Guadalupe</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 rounded-3xl p-5 border border-gray-100 hover:bg-white hover:shadow-md transition-all duration-300 group flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:-translate-y-1 transition-transform">
+                                    <i data-lucide="phone" class="w-6 h-6 text-reale-blue"></i>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between w-full gap-3 min-w-0">
+                                    <div>
+                                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Atención directa</p>
+                                        <a href="tel:+34968859611" class="font-bold text-reale-dark text-xl leading-none hover:text-reale-blue transition-colors">968 85 96 11</a>
+                                    </div>
+                                    <div class="hidden sm:block w-px h-8 bg-gray-200 flex-shrink-0"></div>
+                                    <div class="text-xs font-semibold text-gray-500 whitespace-nowrap">
+                                        <p>L-V: 9:00 a 13:30h</p>
+                                        <p>L-J: 15:00 a 17:00h</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="bg-gray-50 rounded-3xl p-5 lg:px-8 border border-gray-100 hover:bg-white hover:shadow-md transition-all duration-300 group flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                            
+                            <div class="flex items-center gap-3 w-full md:w-1/3 justify-start min-w-0">
+                                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="file-text" class="w-4 h-4 text-reale-blue"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-[10px] font-bold text-reale-blue uppercase tracking-widest mb-0.5">Producción</p>
+                                    <a href="mailto:noelia.lopez.cerezo@agencia.reale.es" class="text-xs font-semibold text-gray-700 hover:text-reale-blue truncate block w-full" title="noelia.lopez.cerezo@agencia.reale.es">noelia.lopez.cerezo@agencia.reale.es</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 w-full md:w-1/3 md:justify-center border-t md:border-t-0 md:border-x border-gray-200 py-3 md:py-0 md:px-6 min-w-0">
+                                <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-alert" class="w-4 h-4 text-red-500"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-[10px] font-bold text-red-500 uppercase tracking-widest mb-0.5">Siniestros</p>
+                                    <a href="mailto:antonio.beltran.lopez@agencia.reale.es" class="text-xs font-semibold text-gray-700 hover:text-reale-blue truncate block w-full" title="antonio.beltran.lopez@agencia.reale.es">antonio.beltran.lopez@agencia.reale.es</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 w-full md:w-1/3 md:justify-end border-t md:border-t-0 border-gray-200 pt-3 md:pt-0 min-w-0">
+                                <div class="min-w-0 flex-1 md:text-right">
+                                    <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-0.5">Administración</p>
+                                    <a href="mailto:diego.beltran.ruiz@agencia.reale.es" class="text-xs font-semibold text-gray-700 hover:text-reale-blue truncate block w-full" title="diego.beltran.ruiz@agencia.reale.es">diego.beltran.ruiz@agencia.reale.es</a>
+                                </div>
+                                <div class="w-10 h-10 bg-yellow-100 rounded-xl items-center justify-center flex-shrink-0 hidden md:flex">
+                                    <i data-lucide="calculator" class="w-4 h-4 text-yellow-600"></i>
+                                </div>
+                                <div class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0 md:hidden order-first">
+                                    <i data-lucide="calculator" class="w-4 h-4 text-yellow-600"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
                 </div>
             </section>
 
