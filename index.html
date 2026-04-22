@@ -1268,62 +1268,86 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
                             
-                            <div class="contact-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm flex items-center gap-5 h-full">
-                                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="phone" class="w-6 h-6 text-reale-blue"></i>
+                            <div class="flex flex-col gap-6">
+                                
+                                <div class="contact-card bg-white rounded-3xl p-4 sm:p-5 border border-gray-100 shadow-md flex flex-col sm:flex-row gap-3 items-center justify-between">
+                                    <a href="tel:+34968859611" class="flex-1 flex items-center gap-3 group w-full bg-gray-50 hover:bg-blue-50 p-3 rounded-2xl transition-colors">
+                                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-reale-blue shadow-sm transition-colors">
+                                            <i data-lucide="phone" class="w-4 h-4 text-reale-blue group-hover:text-white transition-colors"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Llámanos</p>
+                                            <p class="text-base font-heading text-reale-dark group-hover:text-reale-blue transition-colors">968 85 96 11</p>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="https://wa.me/34968859611" target="_blank" class="flex-1 flex items-center gap-3 group w-full bg-gray-50 hover:bg-green-50 p-3 rounded-2xl transition-colors">
+                                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 shadow-sm transition-colors">
+                                            <i data-lucide="message-circle" class="w-4 h-4 text-green-500 group-hover:text-white transition-colors"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">WhatsApp</p>
+                                            <p class="text-base font-heading text-green-600 group-hover:underline">Escríbenos</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div>
-                                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Llámanos</p>
-                                    <a href="tel:+34968859611" class="text-2xl font-heading text-reale-dark hover:text-reale-blue transition-colors">968 85 96 11</a>
+
+                                <div class="contact-card relative overflow-hidden bg-gradient-to-br from-[#002654] to-[#001e40] text-white rounded-3xl p-6 shadow-md h-full flex items-center gap-6">
+                                    <div class="absolute right-0 top-0 w-32 h-32 bg-reale-yellow opacity-10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+                                    <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center flex-shrink-0 backdrop-blur-md border border-white/10">
+                                        <i data-lucide="clock" class="w-6 h-6 text-reale-yellow"></i>
+                                    </div>
+                                    <div class="relative z-10">
+                                        <p class="text-[10px] font-bold text-blue-200 uppercase tracking-widest mb-2">Horario de atención</p>
+                                        <p class="text-sm leading-relaxed">
+                                            <span class="font-bold text-reale-yellow">L-V:</span> 09:00 a 13:30h<br>
+                                            <span class="font-bold text-reale-yellow mt-1 inline-block">L-J:</span> 15:00 a 17:00h
+                                        </p>
+                                    </div>
                                 </div>
+                                
                             </div>
 
-                            <div class="contact-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm flex items-center gap-5 h-full">
-                                <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="message-circle" class="w-6 h-6 text-green-500"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">WhatsApp</p>
-                                    <a href="https://wa.me/34968859611" target="_blank" class="text-2xl font-heading text-green-600 hover:underline">Escríbenos ahora</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm flex items-center gap-5 h-full">
-                                <div class="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="clock" class="w-6 h-6 text-reale-yellow"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Horario</p>
-                                    <p class="text-sm text-gray-600 leading-snug">
-                                        <span class="font-bold text-reale-dark">L-V:</span> 09:00 a 13:30h<br>
-                                        <span class="font-bold text-reale-dark mt-0.5 inline-block">L-J:</span> 15:00 a 17:00h
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="contact-card bg-white rounded-3xl p-6 border border-gray-100 shadow-sm flex items-start gap-5 h-full">
-                                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="mail" class="w-6 h-6 text-reale-blue"></i>
-                                </div>
-                                <div class="w-full overflow-hidden mt-1">
-                                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Correos</p>
+                            <div class="flex flex-col h-full">
+                                
+                                <div class="contact-card bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-md h-full flex flex-col justify-center">
+                                    <div class="flex items-center gap-4 mb-5">
+                                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                            <i data-lucide="mail" class="w-5 h-5 text-reale-blue"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Atención directa</p>
+                                            <h3 class="text-lg font-heading text-reale-dark uppercase">Correos electrónicos</h3>
+                                        </div>
+                                    </div>
+                                    
                                     <div class="space-y-3">
-                                        <div>
-                                            <p class="text-[10px] text-reale-blue font-bold uppercase mb-0.5">Producción</p>
-                                            <a href="mailto:noelia.lopez.cerezo@agencia.reale.es" class="text-sm font-semibold text-gray-700 hover:text-reale-blue truncate block">noelia.lopez.cerezo@agencia.reale.es</a>
+                                        <div class="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 border border-transparent hover:border-blue-100 hover:bg-white transition-all group">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-reale-blue font-bold text-[10px] flex-shrink-0 group-hover:bg-reale-blue group-hover:text-white transition-colors">PR</div>
+                                            <div class="overflow-hidden w-full">
+                                                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Producción</p>
+                                                <a href="mailto:noelia.lopez.cerezo@agencia.reale.es" class="text-xs sm:text-sm font-semibold text-gray-700 hover:text-reale-blue truncate block w-full transition-colors">noelia.lopez.cerezo@agencia.reale.es</a>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="text-[10px] text-reale-blue font-bold uppercase mb-0.5">Siniestros</p>
-                                            <a href="mailto:antonio.beltran.lopez@agencia.reale.es" class="text-sm font-semibold text-gray-700 hover:text-reale-blue truncate block">antonio.beltran.lopez@agencia.reale.es</a>
+                                        <div class="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 border border-transparent hover:border-red-100 hover:bg-white transition-all group">
+                                            <div class="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-bold text-[10px] flex-shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">SN</div>
+                                            <div class="overflow-hidden w-full">
+                                                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Siniestros</p>
+                                                <a href="mailto:antonio.beltran.lopez@agencia.reale.es" class="text-xs sm:text-sm font-semibold text-gray-700 hover:text-reale-blue truncate block w-full transition-colors">antonio.beltran.lopez@agencia.reale.es</a>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="text-[10px] text-reale-blue font-bold uppercase mb-0.5">Administración</p>
-                                            <a href="mailto:diego.beltran.ruiz@agencia.reale.es" class="text-sm font-semibold text-gray-700 hover:text-reale-blue truncate block">diego.beltran.ruiz@agencia.reale.es</a>
+                                        <div class="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 border border-transparent hover:border-yellow-100 hover:bg-white transition-all group">
+                                            <div class="w-9 h-9 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold text-[10px] flex-shrink-0 group-hover:bg-yellow-500 group-hover:text-white transition-colors">AD</div>
+                                            <div class="overflow-hidden w-full">
+                                                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Administración</p>
+                                                <a href="mailto:diego.beltran.ruiz@agencia.reale.es" class="text-xs sm:text-sm font-semibold text-gray-700 hover:text-reale-blue truncate block w-full transition-colors">diego.beltran.ruiz@agencia.reale.es</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             
                         </div>
