@@ -373,9 +373,7 @@
             /* HERO */
             #hero-section .grid { min-height: auto !important; gap: 0 !important; }
             #hero-section .lg\:col-span-7 { padding-top: 2.5rem !important; padding-bottom: 1rem !important; }
-            #hero-section .lg\:col-span-5 { order: 0; padding-bottom: 1rem !important; }
-            #hero-section .lg\:col-span-5 > div { width: 140px !important; height: 140px !important; }
-            #hero-section .lg\:col-span-5 img[alt="SuperSeguros BR Logo"] { width: 7rem !important; }
+            #hero-section .lg\:col-span-5 { display: none !important; }
             .hero-trust-badge { display: none !important; }
             #hero-section h1 span:last-child { font-size: 2.6rem !important; }
             #hero-section .hero-stagger-5 { font-size: 0.95rem !important; margin-bottom: 1.5rem !important; }
@@ -530,6 +528,14 @@
                             <span class="hero-stagger-1 inline-block self-center lg:self-start py-1.5 px-4 rounded-full bg-white bg-opacity-10 text-reale-yellow border border-reale-yellow border-opacity-30 font-semibold text-sm mb-6 tracking-widest uppercase shadow-sm">
                                 Tu tranquilidad, nuestra prioridad
                             </span>
+                            
+                            <!-- Logo solo visible en móvil, entre badge y h1 -->
+                            <div class="lg:hidden flex justify-center mb-4">
+                                <img src="https://res.cloudinary.com/dg3peytgm/image/upload/v1777232094/ChatGPT_Image_26_abr_2026_19_05_40-Photoroom_f0s9zh.png"
+                                     alt="SuperSeguros BR Logo Mobile"
+                                     class="w-28 object-contain"
+                                     style="filter: drop-shadow(0 0 32px rgba(255,199,44,0.3));">
+                            </div>
                             
                             <h1 class="font-heading text-white leading-[1.05] mb-6 uppercase">
                                 <span class="hero-stagger-2 block text-3xl md:text-4xl lg:text-5xl opacity-90">Protege lo que</span>
@@ -1103,7 +1109,7 @@
                             </div>
                             <div class="min-w-0 flex-1">
                                 <p class="text-[10px] font-bold text-reale-blue uppercase tracking-widest mb-0.5">Producción</p>
-                                <a href="#" onclick="return false;" class="text-xs font-semibold text-gray-700 hover:text-reale-blue transition-colors truncate block" data-em="se.elaer.aicnega@ozerec.zepol.aileon"><span class="em-reveal" data-em="se.elaer.aicnega@ozerec.zepol.aileon"></span></a>
+                                <a href="#" onclick="return false;" class="text-xs font-semibold text-gray-700 hover:text-reale-blue transition-colors truncate block"><span class="em-reveal" data-em="se.elaer.aicnega@ozerec.zepol.aileon"></span></a>
                             </div>
                         </div>
 
@@ -1114,7 +1120,7 @@
                             </div>
                             <div class="min-w-0 flex-1">
                                 <p class="text-[10px] font-bold text-red-400 uppercase tracking-widest mb-0.5">Siniestros</p>
-                                <a href="#" onclick="return false;" class="text-xs font-semibold text-gray-700 hover:text-reale-blue transition-colors truncate block" data-em="se.elaer.aicnega@zepol.nartleb.oinotna"><span class="em-reveal" data-em="se.elaer.aicnega@zepol.nartleb.oinotna"></span></a>
+                                <a href="#" onclick="return false;" class="text-xs font-semibold text-gray-700 hover:text-reale-blue transition-colors truncate block"><span class="em-reveal" data-em="se.elaer.aicnega@zepol.nartleb.oinotna"></span></a>
                             </div>
                         </div>
 
@@ -1125,7 +1131,7 @@
                             </div>
                             <div class="min-w-0 flex-1">
                                 <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-0.5">Administración</p>
-                                <a href="#" onclick="return false;" class="text-xs font-semibold text-gray-700 hover:text-reale-blue transition-colors truncate block" data-em="se.elaer.aicnega@ziur.nartleb.ogeid"><span class="em-reveal" data-em="se.elaer.aicnega@ziur.nartleb.ogeid"></span></a>
+                                <a href="#" onclick="return false;" class="text-xs font-semibold text-gray-700 hover:text-reale-blue transition-colors truncate block"><span class="em-reveal" data-em="se.elaer.aicnega@ziur.nartleb.ogeid"></span></a>
                             </div>
                         </div>
 
